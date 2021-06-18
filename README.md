@@ -4,7 +4,7 @@ Em gái mình năm nay thi vào lớp 10. Hôm qua vào ngày 16/6 thì đã có
 <h3>Trong file folder có 7 file:</h3>
 <br>
   <ul>
-query.sql các scr
+query.sql các script để thao tác vơi SQl
 
 crawl_score.py sẽ làm công việc chính là tải dữ liệu từ web về và lưu trữ vào cơ sở dữ liệu.
 
