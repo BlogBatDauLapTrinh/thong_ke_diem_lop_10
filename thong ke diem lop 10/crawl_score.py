@@ -22,22 +22,28 @@ def download_data(mshs):
     all_span = all_span.replace("</span>","")
     all_span = all_span.split(',')
 
-    print(mshs)
+    # print(mshs)
+    for i,v in enumerate(all_span):
+        print(i,v)
     if len(all_span) < 6:
         return 
     mshs = int(mshs)
+    
     truong_cu = all_span[6]
-    nv1 = int(all_span[7].strip())
+    if all_span [7] != None and len(all_span [7].strip())>0:
+        nv1 = int(all_span[7].strip())
+    else:
+        nv1 = 1   
     if all_span [8] != None and len(all_span [8].strip())>0:
         nv2 = int(all_span [8].strip())
     else:
-        nv2 = 0
+        nv2 = 1
     if "V" in all_span[12]:
         tong_diem = 0
     else:
         tong_diem = float(all_span[12].strip())
 
-    insertVariableIntoTable(mshs,truong_cu,nv1,nv2,tong_diem)
+    # insertVariableIntoTable(mshs,truong_cu,nv1,nv2,tong_diem)
 def create_connection(db_file):
     conn = None
     try:
@@ -49,15 +55,18 @@ def create_connection(db_file):
 
 
 def insertVariableIntoTable(mshs,truong_cu,nv1,nv2,tong_diem):
-    conn = create_connection('bangdiem.db')
+    conn = create_connection('catinh.db')
     # conn = sqlite3.connect('bangdiem.db')
     c = conn.cursor()
-    sqlite_insert_with_param = """INSERT INTO tranvanon(mshs,truong_cu,nv1,nv2,tong_diem) 
+    sqlite_insert_with_param = """INSERT INTO dian(mshs,truong_cu,nv1,nv2,tong_diem) 
                           VALUES (?, ?, ?, ?, ?);"""
     data_tuple = (mshs,truong_cu,nv1,nv2,tong_diem)
     c.execute(sqlite_insert_with_param, data_tuple)
     conn.commit()
     conn.close()
 
-for i in range(80001,80934):
-    download_data(i)
+# for i in range(10001,10795):
+#     download_data(i)
+
+download_data(10100)
+download_data(10101)

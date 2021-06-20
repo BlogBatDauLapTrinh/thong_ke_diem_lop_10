@@ -1,4 +1,4 @@
-CREATE TABLE diem_trinhhoaiduc (
+CREATE TABLE nguyendinhchieu(
 	"mshs"	INTEGER,
 	"truong_cu"	TEXT,
 	"nv1"	INTEGER,
@@ -6,6 +6,6 @@ CREATE TABLE diem_trinhhoaiduc (
 	"tong_diem"	FLOAT
 );
 
-SELECT * FROM trinhhoaiduc ORDER BY diem_trinhhoaiduc DESC LIMIT 450;
+SELECT * FROM lythaito ORDER BY diem_trinhhoaiduc DESC LIMIT 450;
 
-INSERT INTO diem_trinhhoaiduc SELECT * FROM trinhhoaiduc ORDER BY tong_diem DESC
+INSERT INTO diem_binhphu SELECT * FROM binhphu ORDER BY tong_diem DESC;
