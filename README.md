@@ -5,7 +5,10 @@ Em gái mình năm nay thi vào lớp 10. Hôm qua vào ngày 16/6 thì đã có
 
   <ul>
 query.sql các script để thao tác vơi SQl
+  <br>
 crawl_score.py sẽ làm công việc chính là tải dữ liệu từ web về và lưu trữ vào cơ sở dữ liệu.
-convert_sqlite_to_excel.py Được dùng để convert từ file SQlite sang excel.
-3 file excel chứa điểm của 3 trường: Tân Phước Khánh, Trịnh Hoài Đức, Trần Văn Ơn. 
+<br>
+  convert_sqlite_to_excel.py Được dùng để convert từ file SQlite sang excel.
+<br>
+  3 file excel chứa điểm của 3 trường: Tân Phước Khánh, Trịnh Hoài Đức, Trần Văn Ơn. 
   </ul>
