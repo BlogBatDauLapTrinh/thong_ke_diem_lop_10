@@ -1,3 +1,4 @@
+import argparse
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from time import sleep
@@ -7,8 +8,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
-import sys
-from joblib import Parallel, delayed
 BASE_URL = "https://binhduong.edu.vn/tra-cuu-diem-tuyen-sinh-lop-10.html?ky-thi=ts10_22_23&tu-khoa="
 
 class Student():
@@ -39,7 +38,7 @@ class GETSCOREOFSCHOOL():
             ChromeDriverManager().install(), options=op)
     
     def crawl_all(self):
-        for student_idx in range(1,MAX_STUDENT_INDEX):
+        for student_idx in range(FIRST_STUDENT_INDEX,LAST_STUDENT_INDEX):
             student_data = self.get_student_data(student_idx)
             with open(f'data_csv/data_{self.school_index}.csv','a') as f:
                 f.writelines(str(student_data)+"\n")
@@ -50,7 +49,6 @@ class GETSCOREOFSCHOOL():
         return self.extract_data_from_html(html)
 
     def get_html_student_score(self,student_index):
-        # print(type(student_index))
         if int(student_index) < 10:
             student_index = f"000{student_index}"
         elif int(student_index) < 100:
@@ -96,11 +94,17 @@ class GETSCOREOFSCHOOL():
         return student_index in str(self.driver.page_source)
 
 ##################################MAIN HERE####################################################################################################################
-try:
-    SCHOOL_INDEX = int(sys.argv[1])
-    MAX_STUDENT_INDEX = int(sys.argv[2])
-except:
-    print('fulfill the parameter')
+parser = argparse.ArgumentParser()
+parser.add_argument("-si", "--schoolindex", help="School index", type=int)
+parser.add_argument("-lsi", "--laststudentindex", help="Student index", type=int)
+parser.add_argument("-fsi", "--firststudentindex", help="Student index", type=int)
+args = parser.parse_args()
+
+SCHOOL_INDEX = args.schoolindex
+LAST_STUDENT_INDEX = args.laststudentindex
+FIRST_STUDENT_INDEX = args.firststudentindex
+
+print(SCHOOL_INDEX,LAST_STUDENT_INDEX)
 get_score_object = GETSCOREOFSCHOOL(SCHOOL_INDEX)
 get_score_object.crawl_all()
-print(SCHOOL_INDEX,MAX_STUDENT_INDEX)
+print(SCHOOL_INDEX,LAST_STUDENT_INDEX)
