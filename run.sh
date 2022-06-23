@@ -6,10 +6,10 @@
 # python3 src/crawl_score.py -si=7 -fsi=970 -lsi=971&
 # python3 src/crawl_score.py -si=10 -fsi=402 -lsi=931&
 ######################################################
-python3 src/crawl_score.py -si=8 -fsi=641 -lsi=833&
-python3 src/crawl_score.py -si=9 -fsi=566 -lsi=879&
-# python3 src/crawl_score.py -si=30 -fsi=533 -lsi=807&
-# python3 src/crawl_score.py -si=3 -fsi=180 -lsi=818
+python3 src/crawl_score.py -si=8 -fsi=667 -lsi=833&
+python3 src/crawl_score.py -si=9 -fsi=575 -lsi=879&
+# python3 src/crawl_score.py -si=30 -fsi=539 -lsi=807&
+# python3 src/crawl_score.py -si=3 -fsi=199 -lsi=818
 # python3 src/crawl_score.py -si=4 -fsi=993 -lsi=1040&
 # python3 src/crawl_score.py -si=5 -fsi=73 -lsi=755&
 # python3 src/crawl_score.py -si=11 -fsi=425 -lsi=1166&

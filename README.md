@@ -1,14 +1,17 @@
-# thong_ke_diem_lop_10
-Em gái mình năm nay thi vào lớp 10. Hôm qua vào ngày 16/6 thì đã có điểm thi của toàn học sinh trên tỉnh Bình Dương, thế nhưng điểm chuẩn thì phải chờ một thời gian nữa mới có. Và sau khi mình vào trang web tra cứu điểm thì thấy mình có thể tra cứu điểm của toàn bộ học sinh với số báo danh. Mà số báo danh của học sinh thì rất đơn giản và tăng dần.Đó là nguyên nhân của directory này.
-<br>
-<h3>Trong file folder có 7 file:</h3>
 
-  <ul>
-query.sql các script để thao tác vơi SQl
-  <br>
-crawl_score.py sẽ làm công việc chính là tải dữ liệu từ web về và lưu trữ vào cơ sở dữ liệu.
-<br>
-  convert_sqlite_to_excel.py Được dùng để convert từ file SQlite sang excel.
-<br>
-  3 file excel chứa điểm của 3 trường: Tân Phước Khánh, Trịnh Hoài Đức, Trần Văn Ơn. 
-  </ul>
+# **Thống kê điểm lớp 10 Bình Dương năm 2022**
+
+Toàn bộ dữ liệu được crawl trực tiếp từ [trang web của sở giáo dục Bình Dương](https://binhduong.edu.vn/tra-cuu-diem-tuyen-sinh-lop-10.html)
+
+Và các bạn có thể truy cập trực tiếp các file thống kê [tại đây]()
+
+### Môi trường và thư viện
+
+- Python3
+- BeautifulSoup
+- Selenium
+- Openpyxl
+
+### Work-flow
+Bước 1: Crawl dữ liệu của thí sinh bằng cách sử dụng `Selenium` và phân tách các dữ liệu quan trọng bằng `BeautifulSoup` và lưu trữ dưới dạng `.csv`
+Bước 2: Sử dụng `Openpyxl` để chuyển đổi file `.csv` thành định dạng file `.xlsx`

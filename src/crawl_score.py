@@ -104,7 +104,5 @@ SCHOOL_INDEX = args.schoolindex
 LAST_STUDENT_INDEX = args.laststudentindex
 FIRST_STUDENT_INDEX = args.firststudentindex
 
-print(SCHOOL_INDEX,LAST_STUDENT_INDEX)
 get_score_object = GETSCOREOFSCHOOL(SCHOOL_INDEX)
 get_score_object.crawl_all()
-print(SCHOOL_INDEX,LAST_STUDENT_INDEX)
