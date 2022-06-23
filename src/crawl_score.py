@@ -61,8 +61,6 @@ class GETSCOREOFSCHOOL():
         input_element = self.driver.find_element(by=By.CLASS_NAME,value="ml-md-3").click()
         while not self.is_page_ready(student_index):
             sleep(1)
-        with open('html.html','w') as f:
-            f.writelines(f"{self.driver.page_source}")
         sub_url = f"sbd"
         wait = WebDriverWait(self.driver, 10) 
         wait.until(EC.element_to_be_clickable((By.LINK_TEXT, f'{self.school_index}{student_index}'))).click()
@@ -91,7 +89,7 @@ class GETSCOREOFSCHOOL():
         return Student(student_code,name,old_school,nv1,nv2,additional_score,literature_score,english_score,math_score,total_score)
 
     def is_page_ready(self,student_index):
-        return student_index in str(self.driver.page_source)
+        return str(student_index) in str(self.driver.page_source)
 
 ##################################MAIN HERE####################################################################################################################
 parser = argparse.ArgumentParser()
