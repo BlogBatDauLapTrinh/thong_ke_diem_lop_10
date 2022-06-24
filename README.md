@@ -3,7 +3,7 @@
 
 Toàn bộ dữ liệu được crawl trực tiếp từ [trang web của sở giáo dục Bình Dương](https://binhduong.edu.vn/tra-cuu-diem-tuyen-sinh-lop-10.html)
 
-Và các bạn có thể truy cập trực tiếp các file thống kê [tại đây]()
+Và các bạn có thể truy cập trực tiếp các file thống kê [tại đây](https://batdaulaptrinh.com/thong-ke-diem-tuyen-sinh-lop-10-binh-duong-2022/)
 
 ### Môi trường và thư viện
 
