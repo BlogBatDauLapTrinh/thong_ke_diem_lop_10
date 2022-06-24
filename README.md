@@ -16,4 +16,4 @@ Và các bạn có thể truy cập trực tiếp các file thống kê [tại �
 
 Bước 1: Crawl dữ liệu của thí sinh bằng cách sử dụng `Selenium` và phân tách các dữ liệu quan trọng bằng `BeautifulSoup` và lưu trữ dưới dạng `.csv`
 
-Bước 2: Sử dụng `Openpyxl` để chuyển đổi file `.csv` thành định dạng file `.xlsx`
+Bước 2: Sử dụng thư viện `pandas` để thực hiện sắp xếp thứ tự theo tổng điểm và tuất file Excel dưới dạng `xlsx`
