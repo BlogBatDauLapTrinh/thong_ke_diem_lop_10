@@ -6,7 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 BASE_URL = "https://binhduong.edu.vn/tra-cuu-diem-tuyen-sinh-lop-10.html?ky-thi=ts10_22_23&tu-khoa="
 
@@ -34,8 +33,11 @@ class GETSCOREOFSCHOOL():
             self.school_index = str(school_index)
         self.url = BASE_URL
         op = webdriver.ChromeOptions()
+        # op.add_argument("--incognito")
+        # op.add_argument("--start-maximized")
+        # op.add_argument("----user-data-dir=/home/thanh0x/.config/google-chrome/Default")
         self.driver = webdriver.Chrome(
-            ChromeDriverManager().install(), options=op)
+                executable_path="/usr/bin/chromedriver", options=op)
     
     def crawl_all(self):
         for student_idx in range(FIRST_STUDENT_INDEX,LAST_STUDENT_INDEX):

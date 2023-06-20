@@ -7,7 +7,7 @@
 # python3 src/crawl_score.py -si=10 -fsi=402 -lsi=931&
 # python3 src/crawl_score.py -si=8 -fsi=833 -lsi=833&
 # python3 src/crawl_score.py -si=30 -fsi=474 -lsi=807&
-python3 src/crawl_score.py -si=30 -fsi=474 -lsi=533& 
+python3 src/crawl_score.py -si=1 -fsi=5 -lsi=533& 
 # python3 src/crawl_score.py -si=9 -fsi=879 -lsi=879&
 # python3 src/crawl_score.py -si=3 -fsi=8
 # python3 src/crawl_score.py -si=18 -fsi=660 -lsi=700&
